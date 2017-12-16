@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title SocketIO Demo
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'/>
+    body
+        div
+            include partials/navbar
+            
+            <div class="panel panel-default">
+                  <div class="panel-heading">
+                        <h3 class="panel-title">Currency Table</h3>
+                  </div>
+                  <div class="panel-body">
+                        
+                        <table class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>USDAED</th>
+                                    <th>USDINR</th>
+                                    <th>EUR</th>
+                                </tr>
+                            </thead>
+                            <tbody id="currencyBody">                                
+                            </tbody>
+                        </table>
+                        
+                  </div>
+            </div>
+            
+        
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js'></script>
+    script.
+       const socket  = io('http://localhost:3000');
+       socket.on('channel1', function(payload) {
+           var source   = document.getElementById("entry-template").innerHTML;
+            var template = Handlebars.compile(source);
+            document.getElementById('currencyBody').innerHTML = template(JSON.parse(payload));
+       })
+    <script id="entry-template" type="text/x-handlebars-template">
+        <tr>
+            <td>{{ USDAED }}</td>
+            <td>{{ USDINR }}</td>
+            <td>{{ USDEUR }}</td>
+        </tr>
+    </script>
+    
+    

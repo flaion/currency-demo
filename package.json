@@ -1,0 +1,21 @@
+{
+  "name": "express-socket-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "events": "^1.1.1",
+    "express": "^4.16.2",
+    "http": "0.0.0",
+    "pug": "^2.0.0-rc.4",
+    "redis": "^2.8.0",
+    "socket.io": "^2.0.4"
+  }
+}
